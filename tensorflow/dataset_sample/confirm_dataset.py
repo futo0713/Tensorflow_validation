@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 import pickle
 
-name = 'dataset_linear'
+name = 'dataset_polynomial'
 
 dataset_dir = 'C:\\Users\FutoshiTsutsumi\Desktop\python_test\\tensorflow\dataset_sample\pickle'
-save_file = dataset_dir + '\dataset_linear.pkl'
+save_file = dataset_dir + '\{}.pkl'.format(name)
 
 with open(save_file, 'rb') as f:
     dataset = pickle.load(f)

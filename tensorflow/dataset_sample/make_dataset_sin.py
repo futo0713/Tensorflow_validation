@@ -1,15 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-num_of_sam = 20
-x = np.random.uniform(0, 2, num_of_sam)
+num_of_sam = 40
+x = np.random.uniform(0, 6, num_of_sam)
 
 noise = np.random.normal(0, 0.2, num_of_sam) 
-t = 3*x + 5 + noise
+t = np.sin(x) + 5 + noise
 
 dataset = np.empty((0,num_of_sam))
-dataset = np.vstack((dataset,np.reshape(x,(1,20))))
-dataset = np.vstack((dataset,np.reshape(t,(1,20))))
+dataset = np.vstack((dataset,np.reshape(x,(1,num_of_sam))))
+dataset = np.vstack((dataset,np.reshape(t,(1,num_of_sam))))
 print(dataset)
 
 # plt.plot(x, t, 'o')
@@ -18,7 +18,7 @@ print(dataset)
 import pickle
 
 dataset_dir = 'C:\\Users\FutoshiTsutsumi\Desktop\python_test\\tensorflow\dataset_sample\pickle'
-save_file = dataset_dir + '\dataset_linear.pkl'
+save_file = dataset_dir + '\dataset_sin.pkl'
 
 with open(save_file, 'wb') as f:
     pickle.dump(dataset, f) 
